@@ -1,0 +1,12 @@
+user_oe = input('Enter initial orbital elements as [a, e, i, capOM, smallOM, theta]', 's');
+oe = str2num(user_oe);
+timep=2*pi*(oe(1)^1.5)/398600^0.5;
+slowerupdatedeltat=60*round(timep/60);
+t=input('Enter time in seconds after which state vector wants to be known.');
+n=floor(t/slowerupdatedeltat);
+oearr=mastercontrol(oe);
+initialsv=svfromcoeusingrotation(oearr(n+1, :));
+deltat=t-slowerupdatedeltat*n;
+final_sv=svtimenew(initialsv, deltat);
+display(oearr(n+1, :));
+display(final_sv);

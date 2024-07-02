@@ -1,0 +1,26 @@
+Orbital Mechanics
+
+Basic Problem we solve
+- Given present state of an orbitting object, and all objects that can affect its dynamics and their force laws, predict(and possibly correct) all future states.(classic dynamics problem)
+How we define orbitting object- one that is dominantly affected by a central force due to another object in such a way that solving for the orbitting objects trajectory, apart from small perturbations can be reduced to a one body problem.
+Orbit is generally defined with origin and coordinate system attached to body around which orbit occurs. (Technically rotation happens about common COM but for any practical satellite this would be at the earths COM only)
+
+Simplifying Assumptions- 
+Earth is spherical(its gravitational force at any point can be written  very easily)
+Other celestial bodies have no effect.
+There is no atmospheric drag.
+Non Inertial Forces due to earths revolution are negligible.(ECI frame assumption)
+Very easy to solve- Write F=ma using Newtons Law of Gravitation and double integrate acceleration to get position.
+
+Reality(perturbations exist)
+Earth is oblate(therefore force will be more complex)
+Sun and moon can have an efect.
+Atmospheric Drag exists.
+
+In Lower Orbits 1 and 3 dominate. (Therefore we keep track of these perturbations using some computational models- and verify periodically using GPS(recognize tradeoff between accuracy and computational power- GPS can be completely accurate but constantly using it may be more expensive in terms of power))
+
+Commonly used models- J2 and SGP- read after problem statement.
+
+How can small perturbations add up and not necessarily cancel out(biasing)
+
+

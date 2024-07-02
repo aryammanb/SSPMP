@@ -1,0 +1,5 @@
+Design a sun synchronous low-earth orbit satellite mission. 
+Using appropriate orbital propogation, simulate this mission on MATLAB simulink.
+Input the mission parameters into GMAT(should be more accurate) and simulate the same orbit.
+Compare the results of our used compuational methods(MATLAB) vs GMAT
+Results- How accurate and how computationally effective?

@@ -1,0 +1,25 @@
+function ue=updateelements(oe, deltat)
+ a=oe(1);
+ e=oe(2);
+ inc=oe(3);
+ capom=oe(4);
+ smolom=oe(5);
+ theta=oe(6);
+ root=a^0.5;
+ mew=398600;
+ rootmew=mew^0.5;
+ ballco=4.7e-8;
+ rearth=6371;
+ rho=jacrob(a-rearth);
+ root=root-rootmew*rho*ballco*0.5*deltat;
+ j2=0.0010826;
+ h=rootmew*root*((1-e^2)^0.5);
+ p=a*(1-e^2);
+ capomdot=-1.5*rootmew*j2*(rearth^2)*cos(inc)/(p^2*a^1.5);
+ smolomdot=-1.5*rootmew*j2*(rearth^2)*(2.5*(sin(inc))^2-2)/((p^2)*(a^1.5));
+ capom=capom+capomdot*deltat;
+ smolom=smolom+smolomdot*deltat;
+ a=root^2;
+ newoe=[a, e, inc, capom, smolom, theta];
+ ue=newoe;
+end
